@@ -1,0 +1,13 @@
+[Unit]
+Description=Monitor process 'test' and call remote monitoring API
+After=network.target
+
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/monitor_test.sh
+# Запуск от root, чтобы иметь доступ к /var/lib и /var/monitoring.log
+
+
+[Install]
+WantedBy=multi-user.target
